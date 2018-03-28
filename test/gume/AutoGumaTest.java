@@ -152,10 +152,10 @@ public class AutoGumaTest {
 		guma.setVisina(70);
 		
 		AutoGuma guma2 = new AutoGuma();
-		guma.setMarkaModel("Dunlop Winter Sport 5");
-		guma.setPrecnik(20);
-		guma.setSirina(200);
-		guma.setVisina(70);
+		guma2.setMarkaModel("Dunlop Winter Sport 5");
+		guma2.setPrecnik(20);
+		guma2.setSirina(200);
+		guma2.setVisina(70);
 		
 		assertTrue(guma.equals(guma2));
 	}
