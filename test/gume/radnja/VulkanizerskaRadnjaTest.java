@@ -111,13 +111,14 @@ public class VulkanizerskaRadnjaTest {
 	
 	@Test
 	public void testPronadjiGumuNull() {
-		assertEquals(null, radnja.pronadjiGumu(null));
+		assertEquals(null,radnja.pronadjiGumu(null));
 	}
 	
 	@Test
 	public void testPronadjiGumuIsteMarke() {
 		a = new AutoGuma();
 		gume = new LinkedList<AutoGuma>();
+		
 		a.setMarkaModel("Micheline 123");
 		a.setPrecnik(20);
 		a.setSirina(200);
@@ -133,7 +134,7 @@ public class VulkanizerskaRadnjaTest {
 		radnja.dodajGumu(a2);
 		gume.add(a2);
 		
-		assertEquals(gume, radnja.pronadjiGumu(a.getMarkaModel()));
+		assertTrue(gume.containsAll(radnja.pronadjiGumu("Micheline 123")) && radnja.pronadjiGumu("Micheline 123").containsAll(gume));
 	}
 	
 	@Test
@@ -145,7 +146,7 @@ public class VulkanizerskaRadnjaTest {
 		a.setVisina(50);
 		radnja.dodajGumu(a);
 
-		assertEquals(null, radnja.pronadjiGumu("Micheline 456"));
+		assertTrue(radnja.pronadjiGumu("Micheline 456").isEmpty());
 	}
 
 }
